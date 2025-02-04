@@ -1,0 +1,41 @@
+﻿@model DDS.Models.ddsReg
+<div class="text-center">
+    <div>
+        <div class="container bg-success h-50 w-50">
+            <form asp-controller="Home" asp-action="Index" method="post">
+                <fieldset>
+                    <legend class="text-white">REGISTRATION FORM</legend>
+                    <br />
+                    <div class="form-floating col-6 mx-auto">
+                        <input asp-for="RegName" class="form-control col-6" id="RegName" />
+                        <label asp-for="RegName" class="form-label col-6">Name</label>
+                        <span asp-validation-for="RegName" class="text-danger"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-floating col-6 mx-auto">
+                        <input asp-for="RegMobile" class="form-control col-6" id="RegMobile" />
+                        <label asp-for="RegMobile" class="form-label col-6">Mobile</label>
+                        <span asp-validation-for="RegMobile" class="text-danger"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-floating col-6 mx-auto">
+                        <input asp-for="RegEmail" class="form-control col-6" id="RegEmail" />
+                        <label asp-for="RegEmail" class="form-label col-6">Email</label>
+                        <span asp-validation-for="RegEmail" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-floating col-6 mx-auto">
+                        <input type="submit" />
+                    </div>
+                    <br />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</div>
+@section Scripts {
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+}
